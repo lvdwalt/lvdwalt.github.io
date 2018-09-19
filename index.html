@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Liezl van der Walt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Fontawesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section header">
+	  <div class="logo-container">
+		  <div class="text"></div>
+	  </div>
+  </section>
+  
+  <!-- SCRIPTS -->
+	<script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="assets/js/animated-headline.js"></script>
+	<script type="text/javascript" src="assets/js/menu.js"></script>
+	<script type="text/javascript" src="assets/js/modernizr.js"></script>
+	<script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+	<script type="text/javascript" src="assets/js/init.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
+	<script type="text/javascript" src="assets/js/numscroller.js"></script>
+	<script type="text/javascript" src="assets/js/wow.min.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/text-scramble.js"></script>
+	<script type="text/javascript" src="assets/js/particles.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+
+	<script type="text/javascript">
+		$(window).load(function() {
+			new WOW().init();
+
+			// initialise flexslider
+			$('.flexslider').flexslider({
+				animation: "fade",
+				directionNav: true,
+				controlNav: false,
+				keyboardNav: true,
+				slideToStart: 0,
+				animationLoop: true,
+				pauseOnHover: false,
+				slideshowSpeed: 4000,
+			});
+
+			smoothScroll.init();
+
+			// initialize isotope
+			var $container = $('.portfolio_container');
+			$container.isotope({
+				filter: '*',
+			});
+
+			$('.portfolio_filter a').click(function(){
+				$('.portfolio_filter .active').removeClass('active');
+				$(this).addClass('active');
+
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
+					filter: selector,
+					animationOptions: {
+						duration: 500,
+						animationEngine : "jquery"
+					}
+				});
+				return false;
+			});
+		});
+	</script>
+	
+  </body>
+</html>
